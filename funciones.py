@@ -1,4 +1,5 @@
 import polars as pl
+import numpy as np
 
 def resumen_juegos(df: pl.DataFrame):
     """Cantidad de juegos únicos"""
@@ -25,3 +26,19 @@ def revisar_duplicados(df: pl.DataFrame, subset: list[str] = None):
         "duplicados": duplicados,
         "pct": duplicados / total if total > 0 else 0
     }
+
+import polars as pl
+import numpy as np
+
+def parametrizar_rating_a_5(df: pl.DataFrame, col: str = "User Rating") -> pl.DataFrame:
+    """
+    Reescala la columna de ratings a una escala de 1 a 5.
+    """
+    vals = df[col].to_numpy().astype(float)
+
+    minimo = np.min(vals)
+    maximo = np.max(vals)
+
+    scaled = 1 + ( (vals - minimo) / (maximo - minimo) ) * (5 - 1)
+
+    return df.with_columns(pl.Series(f"{col}_1a5", scaled))

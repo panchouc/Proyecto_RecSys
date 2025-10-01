@@ -52,6 +52,14 @@ gp = (
       .fill_null(0)
 )
 print(gp)
+# ----- Reescalado de Ratings a 1-5 -------- #
+data_scaled = funciones.parametrizar_rating_a_5(data, col="User Rating")
+print(data_scaled.select(["User Rating", "User Rating_1a5"]).head())
+avg_num_by_cat(data_scaled, "User Rating_1a5", "Genre", savefig_name='figures/avg_user_rating(ajustado)_genre.png', show=False)
+hist_num(data_scaled, "User Rating_1a5", savefig_name='figures/hist_user_rating(ajustado).png', show=False)
+scatter_price_vs_rating(data_scaled, "Price", "User Rating_1a5", savefig_name='figures/scatter_price_user_rating(ajustado).png', show=False)
+
+
 
 # ----- Preparación para Clustering -------- #
 

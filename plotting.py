@@ -61,19 +61,30 @@ def hist_num(df: pl.DataFrame, col: str, log=False, winsor_p=0.0, bins=40, savef
     if winsor_p > 0:
         lo, hi = np.quantile(s, [winsor_p, 1-winsor_p])
         s = np.clip(s, lo, hi)
+    
+    # Ajustar bins automáticamente según el rango de datos
+    data_range = np.max(s) - np.min(s)
+    if data_range <= 5:  # Para escalas pequeñas como 1-5
+        bins = min(20, int(data_range * 4))  # Máximo 20 bins
+    
     if log:
         s = s[s > 0]
         s = np.log10(s)
         plt.xlabel(f"log10({col})")
     else:
         plt.xlabel(col)
-    plt.hist(s, bins=bins)
+    
+    plt.figure(figsize=(10, 6))  # Crear nueva figura
+    plt.hist(s, bins=bins, alpha=0.7, color='steelblue', edgecolor='black', linewidth=0.5)
     plt.title(f"Histograma: {col}")
     plt.ylabel("Frecuencia")
+    plt.grid(alpha=0.3)
+    
     if savefig_name:
-        plt.savefig(savefig_name)
+        plt.savefig(savefig_name, dpi=300, bbox_inches='tight')
     if show:
         plt.show()
+    plt.close()  #
 
 def topk_cat_count(df: pl.DataFrame, col: str, k: int = 10, as_pct: bool = False, savefig_name=None, show=True):
 
