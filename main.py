@@ -23,11 +23,23 @@ print("Categorías:", funciones.resumen_categorias(data))
 print("\nDuplicados (todas las columnas):")
 print(funciones.revisar_duplicados(data))
 
+# Histograma de calificaciones de usuarios
 hist_num(data, "User Rating", savefig_name='figures/hist_user_rating.png', show=False)
+
+# Top géneros
 topk_cat_count(data, "Genre", k=10, savefig_name='figures/topk_genre.png', show=False)
+
+# Relacion precio vs calificación
 scatter_price_vs_rating(data, "Price", "User Rating", savefig_name='figures/scatter_price_user_rating.png', show=False)
+
+# Promedio de precios por plataforma
 avg_price_by_platform(data, savefig_name='figures/avg_price_platform.png', show=False)
+
+# Promedio de calificaciones por género
 avg_num_by_cat(data, "User Rating", "Genre", savefig_name='figures/avg_user_rating_genre.png', show=False)
+
+# Matriz de correlación
+funciones.matriz_correlacion(data.select(pl.col(NUMERIC_POLARS_DTYPES)), target_col="User Rating", savefig_name='figures/matriz_correlacion.png')
 
 # Tabla resumen por género
 tabla = (
@@ -58,7 +70,6 @@ print(data_scaled.select(["User Rating", "User Rating_1a5"]).head())
 avg_num_by_cat(data_scaled, "User Rating_1a5", "Genre", savefig_name='figures/avg_user_rating(ajustado)_genre.png', show=False)
 hist_num(data_scaled, "User Rating_1a5", savefig_name='figures/hist_user_rating(ajustado).png', show=False)
 scatter_price_vs_rating(data_scaled, "Price", "User Rating_1a5", savefig_name='figures/scatter_price_user_rating(ajustado).png', show=False)
-
 
 
 # ----- Preparación para Clustering -------- #
