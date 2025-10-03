@@ -43,7 +43,6 @@ def graficar_cluster_optimo(k_range, inertias, silhouette_scores, best_k, savefi
     plt.title('Silhouette Score por k')
     plt.grid(True, alpha=0.3)
 
-    # Marcar el mejor k según silhouette
     plt.axvline(x=best_k, color='g', linestyle='--', alpha=0.7, 
                 label=f'Mejor k={best_k}')
     plt.legend()
@@ -55,17 +54,16 @@ def graficar_cluster_optimo(k_range, inertias, silhouette_scores, best_k, savefi
     
     plt.show()
 
-# ------ Graficos analisis exploratorio ------- #
+
 def hist_num(df: pl.DataFrame, col: str, log=False, winsor_p=0.0, bins=40, savefig_name=None, show=True):
     s = df[col].drop_nulls().to_numpy()
     if winsor_p > 0:
         lo, hi = np.quantile(s, [winsor_p, 1-winsor_p])
         s = np.clip(s, lo, hi)
-    
-    # Ajustar bins automáticamente según el rango de datos
+        
     data_range = np.max(s) - np.min(s)
-    if data_range <= 5:  # Para escalas pequeñas como 1-5
-        bins = min(20, int(data_range * 4))  # Máximo 20 bins
+    if data_range <= 5:  
+        bins = min(20, int(data_range * 4)) 
     
     if log:
         s = s[s > 0]
@@ -74,7 +72,7 @@ def hist_num(df: pl.DataFrame, col: str, log=False, winsor_p=0.0, bins=40, savef
     else:
         plt.xlabel(col)
     
-    plt.figure(figsize=(10, 6))  # Crear nueva figura
+    plt.figure(figsize=(10, 6))  
     plt.hist(s, bins=bins, alpha=0.7, color='steelblue', edgecolor='black', linewidth=0.5)
     plt.title(f"Histograma: {col}")
     plt.ylabel("Frecuencia")
@@ -84,9 +82,9 @@ def hist_num(df: pl.DataFrame, col: str, log=False, winsor_p=0.0, bins=40, savef
         plt.savefig(savefig_name, dpi=300, bbox_inches='tight')
     if show:
         plt.show()
-    plt.close()  #
+    plt.close()  
 
-def topk_cat_count(df: pl.DataFrame, col: str, k: int = 10, as_pct: bool = False, savefig_name=None, show=True):
+def topk_cat_count(df: pl.DataFrame, col: str, k: int = 10, savefig_name=None, show=True):
 
     if col not in df.columns:
         raise ValueError(f"La columna '{col}' no existe en el DataFrame.")
@@ -99,18 +97,14 @@ def topk_cat_count(df: pl.DataFrame, col: str, k: int = 10, as_pct: bool = False
 
     total = float(df.height) if df.height else 1.0
     tabla = tabla.with_columns((pl.col("count") / total).alias("pct"))
-
     labels = [str(x) for x in tabla[col].to_list()]
-    values = tabla["pct"].to_numpy() if as_pct else tabla["count"].to_numpy()
+    values = tabla["count"].to_numpy()
 
-    # --- figura nueva para evitar “mezcla” con gráficos previos ---
     plt.figure(figsize=(10, max(5, 0.5*len(labels))))
     plt.barh(labels, values)
-    plt.gca().invert_yaxis()  # que el top quede arriba
-    if as_pct:
-        plt.xlabel("Porcentaje")
-    else:
-        plt.xlabel("Conteo")
+    plt.gca().invert_yaxis() 
+
+    plt.xlabel("Conteo")
     plt.title(f"Top {len(labels)} de {col}")
     plt.tight_layout()
 
@@ -121,16 +115,14 @@ def topk_cat_count(df: pl.DataFrame, col: str, k: int = 10, as_pct: bool = False
     return tabla
 
 
-# Ejemplo: Price vs Rating
+
 def scatter_price_vs_rating(df: pl.DataFrame,
                             price_col: str = "Price",
                             rating_col: str = "User Rating",
                             alpha: float = 0.3,
                             s: int = 20,
                             savefig_name=None, show=True):
-    """
-    Scatter plot de Precio vs Rating de usuarios.
-    """
+
     if price_col not in df.columns or rating_col not in df.columns:
         raise ValueError("Revisa los nombres de columnas (Price, User Rating).")
 
@@ -149,7 +141,6 @@ def scatter_price_vs_rating(df: pl.DataFrame,
         plt.show()
 
 def avg_price_by_platform(df: pl.DataFrame, top_k: int = 10, savefig_name=None, show=True):
-    # Agrupar por plataforma y calcular precio promedio
     tabla = (
         df.group_by("Platform")
           .agg(pl.col("Price").mean().alias("avg_price"),
@@ -161,7 +152,6 @@ def avg_price_by_platform(df: pl.DataFrame, top_k: int = 10, savefig_name=None, 
     platforms = tabla["Platform"].to_list()
     avg_price = tabla["avg_price"].to_numpy()
 
-    # Gráfico de barras
     plt.figure(figsize=(8, 5))
     plt.bar(platforms, avg_price, color="steelblue")
     plt.ylabel("Precio promedio")
@@ -191,7 +181,7 @@ def avg_num_by_cat(df, num_col: str, cat_col: str, top_k: int = 10, savefig_name
     plt.xlabel(f"Promedio {num_col}")
     plt.ylabel(cat_col)
     plt.title(f"Promedio {num_col} por {cat_col} (Top {len(cats)})")
-    plt.gca().invert_yaxis()  # para que el mayor quede arriba
+    plt.gca().invert_yaxis()  
     plt.tight_layout()
     if savefig_name:
         plt.savefig(savefig_name)
