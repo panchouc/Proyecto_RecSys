@@ -1,5 +1,4 @@
-# **Modelos Referenciales**
-### Proyecto
+# **Proyecto**
 ### Sistemas Recomendadores IIC3633-1 2025-2
 ### **Grupo 3:** 
 
