@@ -12,11 +12,15 @@
 
 ### Organización de archivos
 
-El repositorio tiene 2 carpetas principales:
+El repositorio tiene 6 carpetas principales:
 
 - `data_analysis`: Contiene los scripts y notebooks utilizados para el análisis de datos, incluyendo limpieza, transformación y visualización de datos. El archivo principal es `main.py`. Se debe ejecutar este archivo para reproducir el análisis de datos. `plotting.py` contiene las funciones de visualización y generación de gráficos utilizadas en el análisis. `funciones.py` contiene funciones para cargar y tratar los datos. `parametros.py` tiene parámetros utilizadas en el resto de archivos. La carpeta `figures` contiene imágenes de los gráficos generados en el análisis de datos.
 
 - `modelos_ref`: Contiene los 4 modelos de referencia utilizados. El archivo principal es `modelos_referenciales.ipynb`.
+
+- `modelo_lightgcn`: Contiene el modelo desarrollado a base de LightGCN. El archivo principal es `modelo_lightgcn.ipynb`.
+
+- `modelo_hibrido`: Contiene el modelo híbrido desarrollado. El archivo principal es `modelo_hibrido.ipynb`.
 
 ### Links para descargar datasets
 
