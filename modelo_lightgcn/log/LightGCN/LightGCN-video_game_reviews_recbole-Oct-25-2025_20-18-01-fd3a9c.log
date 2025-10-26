@@ -1,0 +1,172 @@
+Sat 25 Oct 2025 20:18:01 INFO  ['c:\\Users\\felip\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ipykernel_launcher.py', '--f=c:\\Users\\felip\\AppData\\Roaming\\jupyter\\runtime\\kernel-v3babebc08e3b59877bee791f8d1f2060c68647dfc.json']
+Sat 25 Oct 2025 20:18:01 INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = .\video_game_reviews_recbole
+checkpoint_dir = saved
+show_progress = True
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 10
+train_batch_size = 2048
+learner = adam
+learning_rate = 0.001
+train_neg_sample_args = {'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 10
+clip_grad_norm = None
+weight_decay = 0.0
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = False
+metrics = ['Recall', 'MRR', 'NDCG', 'Hit', 'Precision']
+topk = [10]
+valid_metric = MRR@10
+valid_metric_bigger = True
+eval_batch_size = 4096
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = timestamp
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id', 'rating']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = [0,inf)
+item_inter_num_interval = [0,inf)
+alias_of_user_id = None
+alias_of_item_id = None
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+benchmark_filename = None
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+embedding_size = 64
+n_layers = 3
+reg_weight = 1e-05
+numerical_features = []
+discretization = None
+kg_reverse_r = False
+entity_kg_num_interval = [0,inf)
+relation_kg_num_interval = [0,inf)
+MODEL_TYPE = ModelType.GENERAL
+dataset_file = {'inter': 'video_game_reviews_recbole/video_game_reviews_recbole.inter'}
+field_type = {'user_id': 'token', 'item_id': 'token', 'rating': 'float'}
+MODEL_INPUT_TYPE = InputType.PAIRWISE
+eval_type = EvaluatorType.RANKING
+single_spec = True
+local_rank = 0
+device = cpu
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+
+
+Sat 25 Oct 2025 20:18:01 INFO  video_game_reviews_recbole
+The number of users: 3001
+Average actions of users: 15.924666666666667
+The number of items: 41
+Average actions of items: 1194.35
+The number of inters: 47774
+The sparsity of the dataset: 61.17229216277501%
+Remain Fields: ['user_id', 'item_id', 'rating']
+Sat 25 Oct 2025 20:18:01 INFO  [Training]: train_batch_size = [2048] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Sat 25 Oct 2025 20:18:01 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Sat 25 Oct 2025 20:18:02 INFO  LightGCN(
+  (user_embedding): Embedding(3001, 64)
+  (item_embedding): Embedding(41, 64)
+  (mf_loss): BPRLoss()
+  (reg_loss): EmbLoss()
+)
+Trainable parameters: 194688
+Sat 25 Oct 2025 20:18:02 INFO  FLOPs: 0.0
+Sat 25 Oct 2025 20:18:08 INFO  epoch 0 training [time: 1.04s, train loss: 13.8496]
+Sat 25 Oct 2025 20:18:08 INFO  epoch 0 evaluating [time: 0.14s, valid_score: 0.191900]
+Sat 25 Oct 2025 20:18:08 INFO  valid result: 
+recall@10 : 0.4531    mrr@10 : 0.1919    ndcg@10 : 0.2422    hit@10 : 0.502    precision@10 : 0.0542
+Sat 25 Oct 2025 20:18:08 INFO  Saving current: saved\LightGCN-Oct-25-2025_20-18-02.pth
+Sat 25 Oct 2025 20:18:09 INFO  epoch 1 training [time: 0.98s, train loss: 13.8331]
+Sat 25 Oct 2025 20:18:09 INFO  epoch 1 evaluating [time: 0.12s, valid_score: 0.226300]
+Sat 25 Oct 2025 20:18:09 INFO  valid result: 
+recall@10 : 0.4869    mrr@10 : 0.2263    ndcg@10 : 0.2751    hit@10 : 0.5337    precision@10 : 0.0585
+Sat 25 Oct 2025 20:18:09 INFO  Saving current: saved\LightGCN-Oct-25-2025_20-18-02.pth
+Sat 25 Oct 2025 20:18:10 INFO  epoch 2 training [time: 0.97s, train loss: 13.8113]
+Sat 25 Oct 2025 20:18:10 INFO  epoch 2 evaluating [time: 0.14s, valid_score: 0.264000]
+Sat 25 Oct 2025 20:18:10 INFO  valid result: 
+recall@10 : 0.5088    mrr@10 : 0.264    ndcg@10 : 0.3077    hit@10 : 0.5527    precision@10 : 0.0613
+Sat 25 Oct 2025 20:18:10 INFO  Saving current: saved\LightGCN-Oct-25-2025_20-18-02.pth
+Sat 25 Oct 2025 20:18:11 INFO  epoch 3 training [time: 1.03s, train loss: 13.7814]
+Sat 25 Oct 2025 20:18:12 INFO  epoch 3 evaluating [time: 0.12s, valid_score: 0.291800]
+Sat 25 Oct 2025 20:18:12 INFO  valid result: 
+recall@10 : 0.5273    mrr@10 : 0.2918    ndcg@10 : 0.3316    hit@10 : 0.5717    precision@10 : 0.0635
+Sat 25 Oct 2025 20:18:12 INFO  Saving current: saved\LightGCN-Oct-25-2025_20-18-02.pth
+Sat 25 Oct 2025 20:18:13 INFO  epoch 4 training [time: 0.99s, train loss: 13.7420]
+Sat 25 Oct 2025 20:18:13 INFO  epoch 4 evaluating [time: 0.11s, valid_score: 0.305300]
+Sat 25 Oct 2025 20:18:13 INFO  valid result: 
+recall@10 : 0.5337    mrr@10 : 0.3053    ndcg@10 : 0.3425    hit@10 : 0.5787    precision@10 : 0.0643
+Sat 25 Oct 2025 20:18:13 INFO  Saving current: saved\LightGCN-Oct-25-2025_20-18-02.pth
+Sat 25 Oct 2025 20:18:14 INFO  epoch 5 training [time: 0.94s, train loss: 13.6920]
+Sat 25 Oct 2025 20:18:14 INFO  epoch 5 evaluating [time: 0.13s, valid_score: 0.316400]
+Sat 25 Oct 2025 20:18:14 INFO  valid result: 
+recall@10 : 0.5363    mrr@10 : 0.3164    ndcg@10 : 0.3508    hit@10 : 0.5817    precision@10 : 0.0644
+Sat 25 Oct 2025 20:18:14 INFO  Saving current: saved\LightGCN-Oct-25-2025_20-18-02.pth
+Sat 25 Oct 2025 20:18:15 INFO  epoch 6 training [time: 1.01s, train loss: 13.6299]
+Sat 25 Oct 2025 20:18:15 INFO  epoch 6 evaluating [time: 0.11s, valid_score: 0.323200]
+Sat 25 Oct 2025 20:18:15 INFO  valid result: 
+recall@10 : 0.5358    mrr@10 : 0.3232    ndcg@10 : 0.3559    hit@10 : 0.5793    precision@10 : 0.0645
+Sat 25 Oct 2025 20:18:15 INFO  Saving current: saved\LightGCN-Oct-25-2025_20-18-02.pth
+Sat 25 Oct 2025 20:18:16 INFO  epoch 7 training [time: 0.97s, train loss: 13.5562]
+Sat 25 Oct 2025 20:18:16 INFO  epoch 7 evaluating [time: 0.13s, valid_score: 0.326700]
+Sat 25 Oct 2025 20:18:16 INFO  valid result: 
+recall@10 : 0.5348    mrr@10 : 0.3267    ndcg@10 : 0.358    hit@10 : 0.5777    precision@10 : 0.0644
+Sat 25 Oct 2025 20:18:16 INFO  Saving current: saved\LightGCN-Oct-25-2025_20-18-02.pth
+Sat 25 Oct 2025 20:18:17 INFO  epoch 8 training [time: 0.96s, train loss: 13.4685]
+Sat 25 Oct 2025 20:18:17 INFO  epoch 8 evaluating [time: 0.13s, valid_score: 0.331500]
+Sat 25 Oct 2025 20:18:17 INFO  valid result: 
+recall@10 : 0.5352    mrr@10 : 0.3315    ndcg@10 : 0.3616    hit@10 : 0.578    precision@10 : 0.0646
+Sat 25 Oct 2025 20:18:17 INFO  Saving current: saved\LightGCN-Oct-25-2025_20-18-02.pth
+Sat 25 Oct 2025 20:18:18 INFO  epoch 9 training [time: 0.94s, train loss: 13.3679]
+Sat 25 Oct 2025 20:18:18 INFO  epoch 9 evaluating [time: 0.12s, valid_score: 0.334200]
+Sat 25 Oct 2025 20:18:18 INFO  valid result: 
+recall@10 : 0.5366    mrr@10 : 0.3342    ndcg@10 : 0.3639    hit@10 : 0.5793    precision@10 : 0.0646
+Sat 25 Oct 2025 20:18:18 INFO  Saving current: saved\LightGCN-Oct-25-2025_20-18-02.pth
