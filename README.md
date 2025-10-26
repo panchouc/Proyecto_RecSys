@@ -1,4 +1,5 @@
 # **Proyecto**
+### **Multimodalidad: Recomendación de Videojuegos**
 ### Sistemas Recomendadores IIC3633-1 2025-2
 ### **Grupo 3:** 
 
@@ -22,8 +23,12 @@ El repositorio tiene 6 carpetas principales:
 
 - `modelo_hibrido`: Contiene el modelo híbrido desarrollado. El archivo principal es `modelo_hibrido.ipynb`.
 
-### Links para descargar datasets
+### Dataset principal: 
 
-- https://www.kaggle.com/discussions/general/332936
+"Video Game Reviews and Rating: A Randomly Generated Dataset to Help Practice Machine Learning Skills". Jahnavi Paliwal, 2024. Kaggle.
 
-- https://www.kaggle.com/datasets/jahnavipaliwal/video-game-reviews-and-ratings
+### Links para descargar datasets:
+
+- Dataset principal: https://www.kaggle.com/datasets/jahnavipaliwal/video-game-reviews-and-ratings
+
+- Datasets de información adicional: https://www.kaggle.com/discussions/general/332936
