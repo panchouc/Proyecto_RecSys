@@ -23,6 +23,10 @@ El repositorio tiene 6 carpetas principales:
 
 - `modelo_hibrido`: Contiene el modelo híbrido desarrollado. El archivo principal es `modelo_hibrido.ipynb`.
 
+- `modelo_deepfm`: Contiene el modelo desarrollado a base de DeepFM. El archivo principal es `DeepFM.ipynb`.
+
+- `modelo_multivae`: Contiene el modelo desarrollado a base de MultiVAE. El archivo principal es `XXX.ipynb`.
+
 ### Dataset principal: 
 
 "Video Game Reviews and Rating: A Randomly Generated Dataset to Help Practice Machine Learning Skills". Jahnavi Paliwal, 2024. Kaggle.
