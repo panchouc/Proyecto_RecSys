@@ -19,13 +19,13 @@ El repositorio tiene 6 carpetas principales:
 
 - `modelos_ref`: Contiene los 4 modelos de referencia utilizados (Random, Most Popular, User KNN, Item KNN). El archivo principal es `modelos_referenciales.ipynb`.
 
-- `modelo_lightgcn`: Contiene el modelo desarrollado a base de LightGCN. El archivo principal es `modelo_lightgcn.ipynb`.
+- `modelo_lightgcn`: Contiene el modelo desarrollado a base de LightGCN. El archivo principal es `LightGCN.ipynb`.
 
 - `modelo_lightfm`: Contiene el modelo LightFM desarrollado. Los archivos principales son `LightFM_base.ipynb`, `LightFM_features_cat.ipynb`, y `LightFM_features_num.ipynb`.
 
 - `modelo_deepfm`: Contiene el modelo desarrollado a base de DeepFM. El archivo principal es `DeepFM.ipynb`.
 
-- `modelo_multivae`: Contiene el modelo desarrollado a base de MultiVAE. El archivo principal es `XXX.ipynb`.
+- `modelo_multivae`: Contiene el modelo desarrollado a base de MultiVAE. El archivo principal es `MultiVAE.ipynb`.
 
 ### Dataset principal: 
 
