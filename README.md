@@ -21,7 +21,7 @@ El repositorio tiene 6 carpetas principales:
 
 - `modelo_lightgcn`: Contiene el modelo desarrollado a base de LightGCN. El archivo principal es `modelo_lightgcn.ipynb`.
 
-- `modelo_lightfm`: Contiene el modelo LightFM desarrollado. Los archivos principales son `XXX.ipynb`, `XXX.ipynb`, y `XXX.ipynb`.
+- `modelo_lightfm`: Contiene el modelo LightFM desarrollado. Los archivos principales son `LightFM_base.ipynb`, `LightFM_features_cat.ipynb`, y `LightFM_features_num.ipynb`.
 
 - `modelo_deepfm`: Contiene el modelo desarrollado a base de DeepFM. El archivo principal es `DeepFM.ipynb`.
 
