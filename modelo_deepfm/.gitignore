@@ -6,4 +6,4 @@ data/
 Old_Datasets/
 games_steam_matched.csv
 games_steam_merged.csv
-text_emb_sampled.npy
+text_emb_sampled.npy    
