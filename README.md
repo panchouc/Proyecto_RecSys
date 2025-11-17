@@ -1,5 +1,5 @@
 # **Proyecto**
-### **Multimodalidad: Recomendación de Videojuegos**
+### **Multimodalidad: Recomendación deVideojuegos**
 ### Sistemas Recomendadores IIC3633-1 2025-2
 ### **Grupo 3:** 
 
@@ -13,7 +13,9 @@
 
 ### Organización de archivos
 
-El repositorio tiene 6 carpetas principales:
+El repositorio tiene 7 carpetas principales:
+
+- `data`: Contiene `sampled_recommendations.csv`, que es el muestreo realizado del set de interacciones original `recommendations.csv` debido a su gran tamaño (decenas de millones de interacciones y un peso de cerca de 2 GB). El código con el que se realizó el muestreo está en `muestreo.ipynb`, en donde se detalla el procedimiento. Además, esta carpeta también contiene la carpeta `split`, en donde se encuentran los archivos .csv de los sets de entrenamiento, testeo, y validación obtenidos a partir de la división del muestreo del dataset original, es decir, el split se hizo sobre `sampled_recommendations.csv`. Todos los modelos usarán estos mismos archivos de entrenamiento, testeo, y validación.
 
 - `data_analysis`: Contiene los scripts y notebooks utilizados para el análisis de datos, incluyendo limpieza, transformación y visualización de datos. El archivo principal es `main.py`. Se debe ejecutar este archivo para reproducir el análisis de datos. `plotting.py` contiene las funciones de visualización y generación de gráficos utilizadas en el análisis. `funciones.py` contiene funciones para cargar y tratar los datos. `parametros.py` tiene parámetros utilizadas en el resto de archivos. La carpeta `figures` contiene imágenes de los gráficos generados en el análisis de datos.
 
@@ -29,10 +31,19 @@ El repositorio tiene 6 carpetas principales:
 
 ### Dataset principal: 
 
-"Video Game Reviews and Rating: A Randomly Generated Dataset to Help Practice Machine Learning Skills". Jahnavi Paliwal, 2024. Kaggle.
+"Game Recommendations on Steam: A dataset of games, users and reviews for building recommendation systems". Anton Kozyriev, 2024. Kaggle. Link: https://www.kaggle.com/datasets/antonkozyriev/game-recommendations-on-steam?select=recommendations.csv
 
-### Links para descargar datasets:
+Contiene:
 
-- Dataset principal: https://www.kaggle.com/datasets/jahnavipaliwal/video-game-reviews-and-ratings
+- `recommendations.csv`: evaluaciones de usuarios a ítems.
 
-- Datasets de información adicional: https://www.kaggle.com/discussions/general/332936
+- `users.csv`: información general de usuarios registrados.
+
+- `games.csv`: información general de videojuegos y add-ons disponibles en la plataforma.
+
+- `games_metadata.json`: información adicional de videojuegos y add-ons disponibles en la plataforma (metadata).
+
+### Datasets adicionales:
+
+- Metadata adicional de videojuegos de Steam: "Steam Store Games (Clean dataset): Combined data of 27,000 games scraped from Steam and SteamSpy APIs". Nik Davis, 2019. Kaggle. Link: https://www.kaggle.com/datasets/nikdavis/steam-store-games?select=steam.csv
+

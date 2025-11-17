@@ -1,3 +1,9 @@
+#Carpetas de logs de LightGCN (RecBole)
 log/
 log_tensorboard/
 saved/
+
+#No se sube por su gran tamaño (cerca de 2 GB)
+recommendations.csv
+#No se sube por su gran tamaño (cerca de 180 MB)
+users.csv
