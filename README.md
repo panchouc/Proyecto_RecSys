@@ -13,21 +13,23 @@
 
 ### Organización de archivos
 
-El repositorio tiene 7 carpetas principales:
+El repositorio tiene 8 carpetas principales:
 
 - `data`: Contiene `sampled_recommendations.csv`, que es el muestreo realizado del set de interacciones original `recommendations.csv` debido a su gran tamaño (decenas de millones de interacciones y un peso de cerca de 2 GB). El código con el que se realizó el muestreo está en `muestreo_pro.ipynb`, en donde se detalla el procedimiento. Además, esta carpeta también contiene la carpeta `split`, en donde se encuentran los archivos .csv de los sets de entrenamiento, testeo, y validación obtenidos a partir de la división del muestreo del dataset original, es decir, el split se hizo sobre `sampled_recommendations.csv`. Todos los modelos usarán estos mismos archivos de entrenamiento, testeo, y validación.
 
 - `data_analysis`: Contiene los scripts y notebooks utilizados para el análisis de datos, incluyendo limpieza, transformación y visualización de datos. El archivo principal es `nuevo_analisis.ipynb`, que contiene el análisis del nuevo dataset utilizado después del hito 2. Los otros archivos corresponden al análisis del dataset antiguo: el archivo a ejecutar era `main.py`, `plotting.py` contiene las funciones de visualización y generación de gráficos, `funciones.py` contiene funciones para cargar y tratar los datos, `parametros.py` tiene parámetros utilizados en el resto de archivos, y la carpeta `figures/` contiene imágenes de los gráficos generados.
 
-- `modelos_ref`: Contiene los 4 modelos de referencia utilizados (Random, Most Popular, User KNN, Item KNN). El archivo principal es `modelos_referenciales.ipynb`.
+- `modelos_ref`: Contiene los 4 modelos de referencia utilizados (Random, Most Popular, ALS, y BPR). Los archivos principales son `ALS_ref.ipynb`, `BPR_ref.ipynb`, y `most_popular_random.ipynb`.
 
-- `modelo_lightgcn`: Contiene el modelo desarrollado a base de LightGCN. El archivo principal es `LightGCN_V2.ipynb`, mientras que `LightGCN.ipynb` corresponde al código antiguo del hito 2.
+- `modelo_lightgcn`: Contiene el modelo desarrollado a base de LightGCN. El archivo principal es `LightGCN_V2+Texto.ipynb`, mientras que `LightGCN_V2.ipynb` es la versión base sin multimodalidad (con el dataset actual) y `LightGCN.ipynb` corresponde al código antiguo del hito 2.
 
 - `modelo_lightfm`: Contiene el modelo LightFM desarrollado. Los archivos principales son `LightFM_base.ipynb`, `LightFM_features_cat.ipynb`, y `LightFM_features_num.ipynb`.
 
 - `modelo_deepfm`: Contiene el modelo desarrollado a base de DeepFM. El archivo principal es `DeepFM_V2.ipynb`, mientras que `DeepFM.ipynb` corresponde al código antiguo del hito 2.
 
-- `modelo_multivae`: Contiene el modelo desarrollado a base de MultiVAE. El archivo principal es `MultiVAE.ipynb`.
+- `modelo_xgboost: Contiene el modelo desarrollado a base de XGBoost (después del hito 2). El archivo principal es `xgboost.ipynb`.
+
+- `modelo_multivae`: Contiene el modelo desarrollado a base de MultiVAE (hasta el hito 2). El archivo principal es `MultiVAE.ipynb`.
 
 ### Dataset principal: 
 
