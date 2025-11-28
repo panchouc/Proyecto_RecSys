@@ -7,3 +7,5 @@ saved/
 recommendations.csv
 #No se sube por su gran tamaño (cerca de 180 MB)
 users.csv
+#No se sube por su gran tamaño (cerca de 150 MB)
+game_embedding_dict.pkl
