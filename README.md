@@ -27,7 +27,7 @@ El repositorio tiene 8 carpetas principales:
 
 - `modelo_deepfm`: Contiene el modelo desarrollado a base de DeepFM. El archivo principal es `DeepFM_V2.ipynb`, mientras que `DeepFM.ipynb` corresponde al código antiguo del hito 2.
 
-- `modelo_xgboost: Contiene el modelo desarrollado a base de XGBoost (después del hito 2). El archivo principal es `xgboost.ipynb`.
+- `modelo_xgboost`: Contiene el modelo desarrollado a base de XGBoost (después del hito 2). El archivo principal es `xgboost.ipynb`.
 
 - `modelo_multivae`: Contiene el modelo desarrollado a base de MultiVAE (hasta el hito 2). El archivo principal es `MultiVAE.ipynb`.
 
