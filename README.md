@@ -21,7 +21,7 @@ El repositorio tiene 8 carpetas principales:
 
 - `modelos_ref`: Contiene los 4 modelos de referencia utilizados (Random, Most Popular, ALS, y BPR). Los archivos principales son `ALS_ref.ipynb`, `BPR_ref.ipynb`, y `most_popular_random.ipynb`.
 
-- `modelo_lightgcn`: Contiene el modelo desarrollado a base de LightGCN. El archivo principal es `LightGCN_V2+Texto.ipynb`, mientras que `LightGCN_V2.ipynb` es la versión base sin multimodalidad (con el dataset actual) y `LightGCN.ipynb` corresponde al código antiguo del hito 2.
+- `modelo_lightgcn`: Contiene el modelo desarrollado a base de LightGCN. Los archivos principales son `LightGCN_V2.ipynb` (modelo base sin multimodalidad), `LightGCN_V2+Texto.ipynb` (multimodalidad con texto), `LightGCN_V2+Imagen.ipynb` (multimodalidad con imágenes), y `LightGCN_V2+Texto+Imagen.ipynb` (multimodalidad con texto e imágenes). Por otro lado, `LightGCN.ipynb` corresponde al código antiguo del hito 2.
 
 - `modelo_lightfm`: Contiene el modelo LightFM desarrollado. Los archivos principales son `LightFM_base.ipynb`, `LightFM_features_cat.ipynb`, y `LightFM_features_num.ipynb`.
 
