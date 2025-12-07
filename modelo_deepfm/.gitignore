@@ -13,3 +13,5 @@ clip_img_emb_by_app.npy
 data2/
 data3/
 DeepFM_V2 copy.ipynb
+text_emb_all-mpnet-base-v2.npy
+*.npy
