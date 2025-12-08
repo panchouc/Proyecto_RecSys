@@ -15,3 +15,7 @@ data3/
 DeepFM_V2 copy.ipynb
 text_emb_all-mpnet-base-v2.npy
 *.npy
+DeepFM_Optimizado.ipynb
+deepfm_hparam_search.csv
+info_videojuegos.json
+metrics_todos_modelos_k10_optimizado.csv
