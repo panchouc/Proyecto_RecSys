@@ -23,7 +23,7 @@ El repositorio tiene 8 carpetas principales:
 
 - `modelo_lightgcn`: Contiene el modelo desarrollado a base de LightGCN. Los archivos principales son `LightGCN_V2.ipynb` (modelo base sin multimodalidad), `LightGCN_V2+Texto.ipynb` (multimodalidad con texto), `LightGCN_V2+Imagen.ipynb` (multimodalidad con imágenes), y `LightGCN_V2+Texto+Imagen.ipynb` (multimodalidad con texto e imágenes). Por otro lado, `LightGCN.ipynb` corresponde al código antiguo del hito 2.
 
-- `modelo_lightfm`: Contiene el modelo LightFM desarrollado. Los archivos principales son `LightFM_base.ipynb`, `LightFM_features_cat.ipynb`, y `LightFM_features_num.ipynb`.
+- `modelo_lightfm`: Contiene el modelo LightFM desarrollado. Los archivos principales son `LightFM.ipynb` (modelo base sin multimodalidad), `LightFM_Texto.ipynb` (multimodalidad con texto), `LightFM_Imagen.ipynb` (multimodalidad con imágenes), y `LightFM_Texto+Imagen.ipynb` (multimodalidad con texto e imágenes). Por otro lado, `LightFM_poster.ipynb` corresponde al código antiguo desarrollado antes de la presentación del póster del proyecto.
 
 - `modelo_deepfm`: Contiene el modelo desarrollado a base de DeepFM. El archivo principal es `DeepFM_V2.ipynb`, mientras que `DeepFM.ipynb` corresponde al código antiguo del hito 2.
 
