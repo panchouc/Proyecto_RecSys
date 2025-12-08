@@ -7,5 +7,7 @@ saved/
 recommendations.csv
 #No se sube por su gran tamaño (cerca de 180 MB)
 users.csv
-#No se sube por su gran tamaño (cerca de 150 MB)
+#No se sube por su gran tamaño (cerca de 150 MB), es el dict de
+# los embeddings de texto de las descripcionesde todos los videojuegos
+# con el modelo SBERT 'all-mpnet-base-v2'
 game_embedding_dict.pkl
