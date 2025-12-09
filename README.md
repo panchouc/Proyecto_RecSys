@@ -1,5 +1,5 @@
 # **Proyecto**
-### **Multimodalidad: Recomendación deVideojuegos**
+### **Multimodalidad: Recomendación de Videojuegos**
 ### Sistemas Recomendadores IIC3633-1 2025-2
 ### **Grupo 3:** 
 
@@ -25,9 +25,9 @@ El repositorio tiene 8 carpetas principales:
 
 - `modelo_lightfm`: Contiene el modelo LightFM desarrollado. Los archivos principales son `LightFM.ipynb` (modelo base sin multimodalidad), `LightFM_Texto_AllMini.ipynb` (multimodalidad con texto usando modelo SBERT All-MiniLM-L6-v2), `LightFM_Texto_AllMpnet.ipynb` (multimodalidad con texto usando modelo SBERT All-Mpnet-Base-v2), `LightFM_Imagen.ipynb` (multimodalidad con imágenes), y `LightFM_Texto+Imagen.ipynb` (multimodalidad con texto e imágenes). Por otro lado, `LightFM_poster.ipynb` corresponde al código antiguo desarrollado antes de la presentación del póster del proyecto.
 
-- `modelo_deepfm`: Contiene el modelo desarrollado a base de DeepFM. El archivo principal es `DeepFM_V2.ipynb`, mientras que `DeepFM.ipynb` corresponde al código antiguo del hito 2.
+- `modelo_deepfm`: Contiene el modelo desarrollado a base de DeepFM. El archivo principal es `DeepFM_FINAL.ipynb`. Por otro lado, `DeepFM_V2.ipynb` corresponde al código antiguo desarrollado antes de la presentación del póster del proyecto y `DeepFM.ipynb` corresponde al código antiguo del hito 2.
 
-- `modelo_xgboost`: Contiene el modelo desarrollado a base de XGBoost (después del hito 2). El archivo principal es `xgboost.ipynb`.
+- `modelo_xgboost`: Contiene el modelo desarrollado a base de XGBoost (después del hito 2). Los archivos principales son `xgboost.ipynb` (modelo base sin multimodalidad), `xgboost_minilm.ipynb` (multimodalidad con texto usando modelo SBERT All-MiniLM-L6-v2), `xgboost_allmpnet.ipynb` (multimodalidad con texto usando modelo SBERT All-Mpnet-Base-v2), `xgboost_clip.ipynb` (multimodalidad con imágenes), y `xgboost_minilm_clip.ipynb` (multimodalidad con texto e imágenes).
 
 - `modelo_multivae`: Contiene el modelo desarrollado a base de MultiVAE (hasta el hito 2). El archivo principal es `MultiVAE.ipynb`.
 
